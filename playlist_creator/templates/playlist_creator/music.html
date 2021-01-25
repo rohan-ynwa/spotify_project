@@ -1,0 +1,26 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'playlist_creator/music.css'%}" rel="stylesheet">
+        <title>
+            Write down how you feel
+        </title>
+        <script src="{% static 'playlist_creator/music.js'%}"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="nav">
+            <div id="title">Your top artists</div>
+        </nav>
+            <div id="player-container">
+                <div id="player">
+                    {% for x in artists %}
+                    <iframe src={{x}} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    {% endfor %}
+                </div>
+            </div>
+    </body>
+</html>
